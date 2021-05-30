@@ -4,20 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='../static/styles.css'>
     <link rel="shortcut icon" type="image/jpg" href="    https://preview.redd.it/buzyn25jzr761.png?width=1000&format=png&auto=webp&s=c8a55973b52a27e003269914ed1a883849ce4bdc"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='../static/styles.css'>
+   
+
     <title>Valorant - Top Leaderboard Ranks</title>
 </head>
 <body>
     <header>
-        <img src='https://preview.redd.it/buzyn25jzr761.png?width=1000&format=png&auto=webp&s=c8a55973b52a27e003269914ed1a883849ce4bdc' length=75 width=75>
-        <nav>
-            <ul>
-                <li><a href='/'>Home</a></li>
-                <li><a href='/contact'>Contact</a></li>
-            </ul>
-        </nav>
+
+        <div>
+            <div id="branding">
+                <img style='padding-left: 20px;' src='https://preview.redd.it/buzyn25jzr761.png?width=1000&format=png&auto=webp&s=c8a55973b52a27e003269914ed1a883849ce4bdc' width=50 length=50>
+                <h1 style='float:right; padding-left: 20px;'>Valorant <span class="highlight">Leaderboard</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="/">HOME</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <div class='showcase'>
@@ -25,11 +35,12 @@
         <p>An accurate leaderboard showcase of the top Valorant Ranked players</p>
     </div>
 
-    <div class='leaderboard'>
-        <h1 class='show'>{{top}}</h1>
+    <div class='container' style="margin-left: 100px; text-align: center;">
+        <br>
+        <br>
 
-        <form action="/" method='POST'>
-            <label for="topplayerschoose">Choose the top player range</label>
+        <form action="/" method='POST' style='margin-left: 20px; margin-right: 1500px;'>
+            <label style='color: white; text-align: center;' for="topplayerschoose">Choose the top player range</label>
             <select name="top" id="top">
               <option value="5">5</option>
               <option value="10">10</option>
@@ -40,30 +51,40 @@
             </select>
             <input type="submit" value='Choose'>
           </form>
+          <br>
+          <br>
+          <table style='width: 80%;'>
+            <tr>
+              <th>Rank</th>
+              <th>Name</th> 
+              <th>Rating</th>
+              <th>Wins</th>
+            </tr>
+    
+    
+        {% for player in players %}
+    
+        <tr>
+            <td>{{player[0]}}</td>
+            <td>{{player[1]}}</td>
+            <td>{{player[2]}}</td>
+            <td>{{player[3]}}</td>
+          </tr>
+    
+    
+        {% endfor %}
+    
+        </table>
     </div>
 
-    <table style="width:100%">
-        <tr>
-          <th>Rank</th>
-          <th>Name</th> 
-          <th>Rating</th>
-          <th>Wins</th>
-        </tr>
+
+    <br>
+    <br>
+    <br>
 
 
-    {% for player in players %}
-
-    <tr>
-        <td>{{player[0]}}</td>
-        <td>{{player[1]}}</td>
-        <td>{{player[2]}}</td>
-        <td>{{player[3]}}</td>
-      </tr>
-
-
-    {% endfor %}
-
-    </table>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html> 

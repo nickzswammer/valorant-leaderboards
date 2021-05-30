@@ -41,7 +41,7 @@ def index():
 
         for i in range(int(top)):
             try:
-                players.append((i, valorant.json()['players'][i]['gameName'], valorant.json()['players'][i]['rankedRating'], valorant.json()['players'][i]['numberOfWins']))
+                players.append((i+1, valorant.json()['players'][i]['gameName'], valorant.json()['players'][i]['rankedRating'], valorant.json()['players'][i]['numberOfWins']))
                 
             except:
                 print("Invalid Data")
