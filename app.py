@@ -47,7 +47,7 @@ def index():
         else:
             act_num='3'
 
-
+    
         players = []
 
         for i in range(int(top)):
