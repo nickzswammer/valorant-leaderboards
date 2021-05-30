@@ -1,0 +1,38 @@
+
+/*Showcase*/
+
+.showcase{
+    background-image: url("https://images6.alphacoders.com/107/thumb-1920-1072679.jpg");
+    min-height: 500PX;
+    text-align: center;
+    background-position: 30% 10%; 
+}
+
+.showcase h1{
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 60px;
+    
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #202020	;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+ul{
+    list-style-type: none; 
+}
+
+.showcase p{
+    color:white;
+    font-size: 30px;
+}
+
+/*Navbar*/
