@@ -9,7 +9,8 @@ http://valorantleaderboards.herokuapp.com/
 ![image](https://user-images.githubusercontent.com/69178481/120117289-52231d00-c141-11eb-9f29-3a7513ba254d.png)
 
 
-
+<br>
+<br>
 Leaderboard:
 
 ![image](https://user-images.githubusercontent.com/69178481/120117295-5b13ee80-c141-11eb-97d8-70cb201cf1ea.png)
