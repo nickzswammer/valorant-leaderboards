@@ -17,7 +17,6 @@ API_KEY = os.getenv('API_KEY')
 PASS = os.getenv('PASSWORD')
 
 #API Response
-valorant = requests.get(f'https://na.api.riotgames.com/val/ranked/v1/leaderboards/by-act/ab57ef51-4e59-da91-cc8d-51a5a2b9b8ff?size=200&startIndex=0&api_key={API_KEY}')
 
 #Connect with MySQL Database
 mysql = MySQL()
@@ -35,7 +34,19 @@ cursor = connection.cursor()
 @app.route('/',  methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
+        act_id = request.form.get('acts')
+        valorant = requests.get(f'https://na.api.riotgames.com/val/ranked/v1/leaderboards/by-act/{act_id}?size=200&startIndex=0&api_key={API_KEY}')
+        print(act_id)
         top = request.form['top']
+        act_num = ''
+
+        if act_id == '97b6e739-44cc-ffa7-49ad-398ba502ceb0':
+            act_num = '1'
+        elif act_id == 'ab57ef51-4e59-da91-cc8d-51a5a2b9b8ff':
+            act_num = '2'
+        else:
+            act_num='3'
+
 
         players = []
 
@@ -46,7 +57,7 @@ def index():
             except:
                 print("Invalid Data")
 
-        return render_template('index.html', top=f'Currently showing top {top} players', players=players)
+        return render_template('index.html', top=f'Currently showing top {top} players', players=players, act_num=f'of ACT {act_num}')
     return render_template('index.html')
 
 @app.route('/contact', methods=['GET', 'POST'])
