@@ -22,7 +22,6 @@
 
 <body>
     <header>
-
         <div>
             <div id="branding">
                 <img style='padding-left: 20px;'
@@ -38,6 +37,11 @@
             </nav>
         </div>
     </header>
+
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>Warning!</strong>    Riot is very lazy and does not provide anyone with a permanent API key. The response may not be working since updates to the API key which regenerates every 24 hours must be manually updated. 
+      </div>
 
     <div class='showcase'>
         <h1>Valorant Leaderboards</h1>
@@ -97,6 +101,7 @@
             {% endfor %}
 
         </table>
+        
     </div>
 
 
@@ -104,9 +109,7 @@
     <br>
     <br>
 
-    <div class='loader-wrapper'>
-        <span class='loader'><span class='loader-inner'></span></span>
-    </div>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -117,11 +120,6 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
-    <script>
-        $(window).on("load", function(){
-            $('.loader-wrapper').fadeOut("slow");
-        });
-    </script>
 
 </body>
 
