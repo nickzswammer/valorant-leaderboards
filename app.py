@@ -60,6 +60,7 @@ def index():
         return render_template('index.html', top=f'Currently showing top {top} players', players=players, act_num=f'of ACT {act_num}')
     return render_template('index.html')
 
+
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
